@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Prof from './components/Prof/Prof';
 import Form from './components/Form/Form';
-// import Pagin from './components/Pagination/Pagin'
 
 function App() {
   return (
@@ -27,6 +26,7 @@ function App() {
             <Form/>
           </Route>
           <Route path="/Prof" render={(props) => <Prof {...props }/>}/>
+          <Route path="/character/:id" children={<Prof />} />
     </Switch>
     </Router>
   );
