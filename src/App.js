@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Prof from './components/Prof/Prof';
 import Form from './components/Form/Form';
+import Pagination from './components/Pagination/Pagination'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
     </div>
     <Link to="/Main">Main</Link>
     <Link to="/Form">AddCharacter</Link>
-    {/* <Pagin/> */}
+    <Pagination/>
     <Switch>
           <Route path="/Main">
             <Main/>

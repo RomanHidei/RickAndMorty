@@ -5,11 +5,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    display: 'flex',
+    flexWrap: 'wrap',
   },
-  Person: {
-      padding: theme.spacing(3)
-  }
+  
 }));
 
 function Main() {
@@ -28,19 +27,21 @@ function Main() {
    },[]) 
 
     return (
-      <div>
+      <div className={classes.root}>
+        <Grid container spacing={2}>
+            <Grid item xs={4} sm={6}>
         { allCharacters && (allCharacters.results.map((character) =>{
           return (
-            <Grid container spacing={1}>
-            <Grid item xs={4}>
-              <Person className = {classes.Person} character ={character} key = {character.id} />
-            </Grid>
-            </Grid>
+            
+              <Person character ={character} key = {character.id} />
+            
                  )  
                     } 
                         ) 
                           ) 
         }
+        </Grid>
+            </Grid>
       </div>
     ); 
   }
