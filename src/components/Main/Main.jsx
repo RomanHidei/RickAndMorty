@@ -5,13 +5,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    flexGrow:1,
   },
   
 }));
 
 function Main() {
+
   const classes = useStyles();
 
    const [allCharacters, setMain] = useState()
@@ -27,21 +27,22 @@ function Main() {
    },[]) 
 
     return (
-      <div className={classes.root}>
-        <Grid container spacing={2}>
-            <Grid item xs={4} sm={6}>
+      <div >
         { allCharacters && (allCharacters.results.map((character) =>{
           return (
             
-              <Person character ={character} key = {character.id} />
+            <Grid container  className={classes.root} spacing={3}>
+            <Grid item xs={4} sm={6}>
+              <Person character ={character} key = {character.id}/>
+
+              </Grid>
+            </Grid>
             
                  )  
                     } 
                         ) 
                           ) 
         }
-        </Grid>
-            </Grid>
       </div>
     ); 
   }
